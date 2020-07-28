@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+  <title>Mu Online Calculator</title>
+
+  <!--Template based on URL below-->
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Place your stylesheet here-->
+  <link href="/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Mu Online Calculator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Experience</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="site/prediction.html">Level Prediction</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chaos Machine</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="#">Experience Table - Normal</a>
+            <a class="dropdown-item" href="#">Experience Table - Master</a>
+            <a class="dropdown-item" href="#">Experience Table - 800+</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+
+    <div class="text-center mt-5 pt-5">
+      <h1>Level Prediction</h1>
+      <p class="lead">This tool calculates the level you are going to be in the future based on the current xp you are getting. The number don't take into account experience drop each level because the impact on the final value would be minimal. This is just an estimate for level and shop items planning.</p>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-6 mt-5">
+        <form>
+          <div class="form-group row">
+            <label for="expPerSecond" class="col-sm-6 col-form-label">Current EXP per second</label>
+            <input type="number" class="form-control col-sm-6" id="expPerSecond" aria-describedby="exp per second" placeholder="EXP/sec" required="true">
+            <small id="expPerSecondHelp" class="form-text text-muted">Leave the Mu Helper active on your spot of choice for some time (at least 15 minutes) to get an accuarate prediction.</small>
+          </div>
+          <div class="form-group row">
+            <label for="currentLevel" class="col-sm-6 col-form-label">Current Level</label>
+            <input type="number" class="form-control col-sm-6" id="currentLevel" aria-describedby="current Level" placeholder="level" placeholder="Level" max="1200" min="1" step="1" required="true">
+            <small id="hoursPerDayHelp" class="form-text text-muted">The level your're at right now. Use decimal cases for accuracy.</small>
+          </div>
+          <div class="form-group row">
+            <label for="hoursPerDay" class="col-sm-6 col-form-label">Hours a day</label>
+            <input type="number" class="form-control col-sm-6" id="hoursPerDay" aria-describedby="hours per day" placeholder="hours/day" value="24" max="24" min="1" step="1">
+            <small id="hoursPerDayHelp" class="form-text text-muted">How much time per day you will be on the spot. Take into consideration repots, events such as BC (10-20min each) and DS (20-30min each) and any other time not leveling.</small>
+          </div>
+          <fieldset id="predictionResults" class="form-group">
+            <div class="form-group row mt-3">
+              <legend class="col-md-12 col-form-label pt-0">Results</legend>
+              <div id="predictionResultsLevel" class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="radio" aria-label="Goal level">
+                    &nbsp;Level
+                  </div>
+                </div>
+                <input id="resultLevel" type="number" class="form-control" aria-label="Text input with radio button" min="2" max="1200">
+                <small id="levelPredictionHelp" class="form-text text-muted col-sm-12">If you want to know when you will reach a level, fill this with the goal level and the calculator will tell you how long until get that.</small>
+              </div>
+              <div id="predictionResultsTime" class="input-group mt-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="radio" aria-label="Goal time">
+                    &nbsp;Time
+                  </div>
+                </div>
+                <input id="resultTimeDays" type="number" class="form-control" aria-label="Days for reaching the level" min="1">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="time-days">days</span>
+                </div>
+                <input id="resultTimeHours" type="number" class="form-control" aria-label="Hours for reaching the level" min="0" max="23">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="time-hours">hours</span>
+                </div>
+                <small id="hoursPerDayHelp" class="form-text text-muted col-sm-12">If you want to know what level you will be in a give time period, fill this and the calculator will tell you what level you will be in that time.</small>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <button id="predictionCalculation" type="button" class="btn btn-primary" disabled>Calculate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main><!-- /.container -->
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-once@2.2.3/jquery.once.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="../js/script.js"></script>
+
+</body></html>
