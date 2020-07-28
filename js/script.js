@@ -30,10 +30,10 @@
     }
 
     currentLevel = parseFloat($('#currentLevel').val());
-    if (typeof currentLevel != 'number' || currentLevel <= 0 || currentLevel > 820) {
+    if (typeof currentLevel != 'number' || currentLevel <= 0 || currentLevel > 800) {
       return {
         result: false,
-        message: 'Current level should be a positive number, lower than 820.',
+        message: 'Current level should be a positive number, lower than 800.',
       };
     }
 

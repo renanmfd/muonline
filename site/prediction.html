@@ -67,31 +67,43 @@
 
     <div class="text-center mt-5 pt-5">
       <h1>Level Prediction</h1>
-      <p class="lead">This tool calculates the level you are going to be in the future based on the current xp you are getting. The number don't take into account experience drop each level because the impact on the final value would be minimal. This is just an estimate for level and shop items planning.</p>
+      <p class="lead">This tool calculates the level you are going to be in the future based on the current xp you are getting. The number don't take into account experience drop each level. This is just an estimate for level and shop items planning.</p>
+    </div>
+
+    <div class="card text-white bg-secondary mb-3">
+      <div class="card-body">
+        <p class="card-text" style="font-size: 14px;">Because of the lack of online information about experience for level up in levels above 800, this tool only calculates for levels bellow 800. This will be expanded to GMO max level (S15.2) 1200 in the short future.</p>
+      </div>
     </div>
 
     <div class="row justify-content-md-center">
-      <div class="col-6 mt-5">
+      <div class="col col-12 col-md-8 col-lg-6 align-self-center">
         <form>
           <div class="form-group row">
             <label for="expPerSecond" class="col-sm-6 col-form-label">Current EXP per second</label>
-            <input type="number" class="form-control col-sm-6" id="expPerSecond" aria-describedby="exp per second" placeholder="EXP/sec" required="true">
-            <small id="expPerSecondHelp" class="form-text text-muted">Leave the Mu Helper active on your spot of choice for some time (at least 15 minutes) to get an accuarate prediction.</small>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="expPerSecond" aria-describedby="exp per second" placeholder="EXP/sec" required="true">
+            </div>
+            <small class="col-12" id="expPerSecondHelp" class="form-text text-muted">Leave the Mu Helper active on your spot of choice for some time (at least 15 minutes) to get an accuarate prediction.</small>
           </div>
           <div class="form-group row">
             <label for="currentLevel" class="col-sm-6 col-form-label">Current Level</label>
-            <input type="number" class="form-control col-sm-6" id="currentLevel" aria-describedby="current Level" placeholder="level" placeholder="Level" max="1200" min="1" step="1" required="true">
-            <small id="hoursPerDayHelp" class="form-text text-muted">The level your're at right now. Use decimal cases for accuracy.</small>
+            <div class="col-sm-6">
+              <input type="number" class="form-control" id="currentLevel" aria-describedby="current Level" placeholder="level" placeholder="Level" max="800" min="1" step="1" required="true">
+            </div>
+            <small class="col-12" id="hoursPerDayHelp" class="form-text text-muted">The level your're at right now. Use decimal cases for accuracy.</small>
           </div>
           <div class="form-group row">
             <label for="hoursPerDay" class="col-sm-6 col-form-label">Hours a day</label>
-            <input type="number" class="form-control col-sm-6" id="hoursPerDay" aria-describedby="hours per day" placeholder="hours/day" value="24" max="24" min="1" step="1">
-            <small id="hoursPerDayHelp" class="form-text text-muted">How much time per day you will be on the spot. Take into consideration repots, events such as BC (10-20min each) and DS (20-30min each) and any other time not leveling.</small>
+            <div class="col-sm-6">
+              <input type="number" class="form-control col-sm-6" id="hoursPerDay" aria-describedby="hours per day" placeholder="hours/day" value="24" max="24" min="1" step="1">
+            </div>
+            <small class="col-12" id="hoursPerDayHelp" class="form-text text-muted">How much time per day you will be on the spot. Take into consideration repots, events such as BC (10-20min each) and DS (20-30min each) and any other time not leveling.</small>
           </div>
           <fieldset id="predictionResults" class="form-group">
             <div class="form-group row mt-3">
               <legend class="col-md-12 col-form-label pt-0">Results</legend>
-              <div id="predictionResultsLevel" class="input-group">
+              <div id="predictionResultsLevel" class="input-group col-12">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <input type="radio" aria-label="Goal level">
@@ -99,9 +111,9 @@
                   </div>
                 </div>
                 <input id="resultLevel" type="number" class="form-control" aria-label="Text input with radio button" min="2" max="1200">
-                <small id="levelPredictionHelp" class="form-text text-muted col-sm-12">If you want to know when you will reach a level, fill this with the goal level and the calculator will tell you how long until get that.</small>
+                <small class="col-12" id="levelPredictionHelp" class="form-text text-muted col-sm-12">If you want to know when you will reach a level, fill this with the goal level and the calculator will tell you how long until get that.</small>
               </div>
-              <div id="predictionResultsTime" class="input-group mt-3">
+              <div id="predictionResultsTime" class="input-group mt-3 col-12">
                 <div class="input-group-prepend">
                   <div class="input-group-text">
                     <input type="radio" aria-label="Goal time">
@@ -116,20 +128,57 @@
                 <div class="input-group-append">
                   <span class="input-group-text" id="time-hours">hours</span>
                 </div>
-                <small id="hoursPerDayHelp" class="form-text text-muted col-sm-12">If you want to know what level you will be in a give time period, fill this and the calculator will tell you what level you will be in that time.</small>
+                <small class="col-12" id="hoursPerDayHelp" class="form-text text-muted col-sm-12">If you want to know what level you will be in a give time period, fill this and the calculator will tell you what level you will be in that time.</small>
               </div>
             </div>
           </fieldset>
           <div class="form-group row">
-            <button id="predictionCalculation" type="button" class="btn btn-primary" disabled>Calculate</button>
+            <div class="col-12">
+              <button id="predictionCalculation" type="button" class="btn btn-primary" disabled>Calculate</button>
+            </div>
           </div>
         </form>
       </div>
     </div>
 
+    <div class="donate row justify-content-md-center" style="font-size: 12px;">
+      <div class="col-12 col-md-6">
+        <div class="en" style="margin-bottom:10px;">
+          <span style="background:url(../images/icon_lang_en.png);display:inline-block;width:28px;height:22px;background-size:cover;margin-right:5px"></span>
+          If you find this tool useful, consider making a donation to improve, update and create other Mu Online tools.
+        </div>
+        <div class="pt-br" style="margin-bottom:10px;">
+          <span style="background:url(../images/icon_lang_pt-br.png);display:inline-block;width:28px;height:22px;background-size:cover;margin-right:5px"></span>
+          Se você acha essa ferramenta útil, considere fazer uma doação para melhorias, atualizações e criação de outras ferramentas do Mu Online.
+        </div>
+        <div class="es" style="margin-bottom:10px;">
+          <span style="background:url(../images/icon_lang_es.png);display:inline-block;width:28px;height:22px;background-size:cover;margin-right:5px"></span>
+          Si encuentra útil esta herramienta, considere hacer una donación para mejorar, actualizar y crear otras herramientas de Mu Online.
+        </div>
+      </div>
+    </div>
   </main><!-- /.container -->
 
 
+  <footer style="background-color: #444; padding: 100px 50px; color:white; margin-top: 50px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          For bugs and suggestions, email me at <i>renanmfd@gmail.com</i>
+        </div>
+        <div class="col-12 col-sm-6">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_donations" />
+            <input type="hidden" name="business" value="TTVTRAR95A6QJ" />
+            <input type="hidden" name="item_name" value="Maintenance and update the tool and create other related tools." />
+            <input type="hidden" name="currency_code" value="USD" />
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
